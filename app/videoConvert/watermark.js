@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const ffmpeg = require('fluent-ffmpeg');
 const ffStatic = require('ffmpeg-static');
-const Store = require('electron-store');
 
 function fixPathForAsarUnpack(path) { 
     let isElectron = 'electron' in process.versions;
@@ -62,9 +61,6 @@ const positions = {
 
 class Watermark {
     constructor(videoPath, watermarkText, metadata) {
-        let store = new Store();
-        let subscription = store.get('subscriptionPlan');
-
         let filename = path.basename(videoPath);
         let baseDir = path.dirname(videoPath);
         let command = ffmpeg(videoPath);
@@ -106,10 +102,6 @@ class Watermark {
                     y: positions[watermarkText].y
                 }
             })
-        }
-        
-        if(subscription === 'lite') {
-            command.size('320x?');
         }
 
         command.on('start', function (commandLine) {
