@@ -1,6 +1,6 @@
 {
   "name": "RMXNews",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Download social media videos for news reports.",
   "main": "src/main.js",
   "scripts": {

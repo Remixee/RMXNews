@@ -4,6 +4,7 @@
 const Wreck = require('wreck');
 const cheerio = require('cheerio');
 
+//Need to update and use API Key. OG Data no longer loading up front.
 module.exports = (url, cb) => {
     const options = {
         redirects: 3,
