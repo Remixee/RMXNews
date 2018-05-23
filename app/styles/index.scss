@@ -1,0 +1,388 @@
+$rmxBlue: #329cff;
+$rmxRed: #fe0000;
+$rmxPurple: #500dc0;
+$rmxGreen: #62e4cc;
+$instagram: #A74A93;
+$snapchat: #FFFB00;
+$twitter: #1DA1F2;
+$fb: #3B5998;
+$twitch: #6441a5;
+$youtube: #cd201f;
+$vimeo: #1ab7ea;
+
+html, body {
+  background-color: #222;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  font: caption;
+}
+
+#mainContent {
+  position: relative;
+  z-index: 10;
+}
+
+#statusBar {
+  position: fixed;
+  height: 80px;
+  padding: 56px 30px 10px 15px;
+  font-size: 24px;
+  width: 100%;
+  background-color:#000;
+  z-index: 100;
+  color: #FFF;
+  display: none;
+  text-align: center;
+}
+
+#urlInput {
+  position:fixed;
+  border: 0;
+  width: 100%;
+  background-color: #333;
+  border-bottom: 1px solid #FFF;
+  height: 50px;
+  padding: 15px 30px 10px 15px;
+  font-size: 24px;
+  color: #FFF;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #FFF;
+    font-size: 24px;
+  }
+}
+
+#previewUrl {
+  border-radius: 50%;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: $rmxBlue;
+  padding: 11px;
+  border: 0;
+
+  img {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+  }  
+}
+
+#previewContent {
+  margin: 14px;
+  position: relative;
+  z-index: 0;
+  margin-top: 156px;
+}
+
+#toolbar {
+  top: 76px;
+  width: 100%;
+  position:fixed;
+  padding: 8px 0;
+  background: #333;
+  border-bottom: 1px solid #FFF;
+
+  #questions {
+    position: absolute;
+    bottom: 9px;
+    right: 12px;
+    cursor: pointer;
+    img {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #777;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+  }
+
+  #subscriptionLogout {
+    position: absolute;
+    bottom: 9px;
+    right: 72px;
+    cursor: pointer;
+    img {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #777;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+  }
+
+}
+
+#saveDirectory {
+  background: none;
+  color: #FFF;
+  border: 0;
+  font-size: 18px;
+  width: 200px;
+  display: inline-block;
+  white-space: nowrap;                     
+  overflow: hidden;
+  text-overflow: ellipsis;
+  direction:rtl;
+  vertical-align: middle;
+
+  &::-webkit-input-placeholder {
+    color: #999;
+  }
+}
+
+#assetName {
+  width: 160px;
+  margin: 0 14px;
+  border: 0;
+  padding: 6px;
+  font-size: 18px;
+  vertical-align: middle;
+  border: none;
+  border-bottom: 1px solid #FFF;
+  background: none;
+  color: #FFF;
+  &::-webkit-input-placeholder {
+    color: #FFF;
+    font-size: 18px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+#chooseDirectory {
+  cursor: pointer;
+  background: none;
+  margin: 0 4px 0 8px;
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+  img {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+}
+
+#downloadUrl {
+  display: none;
+  cursor: pointer;
+  background: none;
+  margin: 0 14px;
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+  img {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+}
+#capturePhoto {
+  display: none;
+  cursor: pointer;
+  background: none;
+  // margin: 0 14px;
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+  img {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+}
+
+#savePreviews {
+  display: none;
+  border-bottom: 1px solid #FFF;
+  position: fixed;
+  top: 146px;
+  width: 100%;
+  min-height: 234px;
+  background: #333;
+  color: #FFF;
+  text-align: left;
+  padding: 0;
+
+  ul {
+    padding: 14px;
+  }
+
+  ul li {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    list-style: none;
+    margin: 0 10px;
+
+    &:first-child {
+      margin: 0 10px 0 0;
+    }
+
+    img {
+      width: 200px;
+      &.snapchatOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .previewContainer {
+      position: relative;
+    }
+
+    watermark {
+      font-size: 8px;
+      background: rgba(0,0,0,.4);
+      padding: 2px;
+      position: absolute;
+      &.topLeft {
+        top: 4px;
+        left: 4px;
+      }
+      &.topRight {
+        top: 4px;
+        right: 4px;
+      }
+      &.bottomLeft {
+        bottom: 8px;
+        left: 4px;
+      }
+      &.bottomRight {
+        bottom: 8px;
+        right: 4px;
+      }
+    }
+  }
+}
+
+#metadata {
+  width: 100%;
+  min-height: 240px;
+  position: relative;
+
+  img {
+    position: absolute;
+    max-width: 200px;
+    max-height: 200px;
+
+    top: 18px;
+    right: 14px;
+  }
+
+  h1 {
+    padding: 14px;
+    margin: 0;
+    text-transform: uppercase;
+    max-width: 50%;
+  }
+
+  p {
+    margin: 0;
+    padding: 0 14px;
+    max-width: 50%;
+  }
+  
+  .service {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+  }
+
+  &.facebook {
+    background-color:$fb;
+    color: #FFF;
+  }
+
+  &.instagram {
+    background-color:$instagram;
+    color: #FFF;
+  }
+  &.snapchat {
+    background-color:$snapchat;
+    color: #333;
+  }
+  &.twitch {
+    background-color:$twitch;
+    color: #FFF;
+  }
+  &.twitter {
+    background-color:$twitter;
+    color: #FFF;
+  }
+  &.vimeo {
+    background-color:$vimeo;
+    color: #FFF;
+  } 
+  &.youtube {
+    background-color:$youtube;
+    color: #FFF;
+  }
+}
+
+.loader {
+  display: none;
+  height: 4px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+}
+.loader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 4px;
+  background-color:$rmxBlue;
+  animation: loading 1.25s linear infinite;
+}
+
+@keyframes loading {
+    from {left: -200px; width: 30%;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}
+
+#embedPreview {
+  text-align: center;
+  padding: 14px;
+}
+
+#canvas {
+  display: none;
+}
+
+@import 'subscribe';

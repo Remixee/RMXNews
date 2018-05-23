@@ -1,0 +1,193 @@
+$rmxBlue: #329cff;
+$rmxRed: #fe0000;
+$rmxPurple: #500dc0;
+$rmxGreen: #62e4cc;
+$instagram: #A74A93;
+$snapchat: #FFFB00;
+$twitter: #1DA1F2;
+$fb: #3B5998;
+$twitch: #6441a5;
+$youtube: #cd201f;
+$vimeo: #1ab7ea;
+
+#mySubscription {
+    font-size: 24px;
+    display: none;
+    width: 500px;
+    margin: 68px auto 0 auto;
+    text-align: left;
+    background: #FFF;
+    display: none;
+    padding: 24px;
+    color: #333;
+    border-radius: 12px;
+
+    button {
+        cursor: pointer;
+        padding: 8px 54px;
+        font-size: 24px;
+        border: 0;
+        font-weight: 100;
+        border-radius: 12px;
+        margin: 12px 0;
+
+        &#loadApp {
+            background-color: green;
+            border: 1px solid #777;
+            color: #FFF;
+        }
+
+        &#cancelSubscription {
+            border: 1px solid #777;
+            background-color: #ecfa8b;
+            color: #333;
+            padding: 8px 32px;
+            font-size: 16px;
+        }
+    }
+
+}
+
+#subscribe {
+    color: #FFF;
+    margin: 0 0 32px 0;
+
+    h1 {
+        margin-bottom: 24px;
+    }
+
+    #alreadySubscribed {
+        margin-top: 12px;
+        font-size: 18px;
+        color: #999;
+        &:visited {
+            color: #999;
+        }
+    }
+
+    #userData {
+        input {
+            display: block;
+            margin: 12px 0;
+            width: 300px;
+            height: 20px;
+            font-size: 18px;
+            padding: 8px;
+        }
+        .errorMessage {
+            text-align: center;
+            font-size: 14px;
+            color: red;
+        }
+    }
+    
+    #prices {
+        margin: 24px 0;
+
+        .priceGrid {
+            border-radius: 8px;
+            background: #FFF;
+            margin: 0 24px;
+            vertical-align: top;
+            display: inline-block;
+            width: 304px;
+
+            &:nth-child(1) {
+                .price {
+                    background: $rmxGreen;
+                }
+            }
+            &:nth-child(2) {
+                .price {
+                    background: $rmxPurple;
+                }
+            }
+            &:nth-child(3) {
+                .price {
+                    background: $rmxBlue;
+                }
+            }
+
+            .plan-name {
+                border-radius: 8px 8px 0 0;
+                margin: 0;
+                padding: 12px 0;
+                background: rgb(215, 215, 215);
+                color: #333;
+                text-align: center;
+            }
+
+            .price {
+                margin: 0;
+                color: #FFF;
+                font-size: 48px;
+                text-align: center;
+                width: 100%;
+                text-shadow: 2px 2px rgba(0,0,0,0.3);
+                padding: 24px 0;
+            }
+
+            button {
+                cursor: pointer;
+                background: #7385ff;
+                width: 100%;
+                color: #f7f7f7;
+                padding: 12px 0;
+                border-width: 1px 0;
+                border-style: solid;
+                border-color: #777;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .details {
+                text-align: center;
+                color: #696969;
+                padding: 12px 0;
+                font-size: 16px;
+                font-weight: 500;
+                border-bottom: 1px solid #828282;
+            }
+            
+            ul {
+                margin: 0;
+                padding: 12px 12px 8px 12px;
+                
+                li {
+                    width: 300px;
+                    list-style: none;
+                    color :#333;
+
+                    img.optionsIcon {
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        padding: 8px 8px 8px 0px;                        
+                    }
+
+                    p {
+                        margin-left: 12px;
+                        font-size: 13px;
+                        margin-top: 14px;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+    }
+
+    #supportDetails {
+        margin-top: 24px;
+    }
+}
+
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;                
+}
+

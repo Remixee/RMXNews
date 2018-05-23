@@ -1,0 +1,436 @@
+html, body {
+  background-color: #222;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  font: caption; }
+
+#mainContent {
+  position: relative;
+  z-index: 10; }
+
+#statusBar {
+  position: fixed;
+  height: 80px;
+  padding: 56px 30px 10px 15px;
+  font-size: 24px;
+  width: 100%;
+  background-color: #000;
+  z-index: 100;
+  color: #FFF;
+  display: none;
+  text-align: center; }
+
+#urlInput {
+  position: fixed;
+  border: 0;
+  width: 100%;
+  background-color: #333;
+  border-bottom: 1px solid #FFF;
+  height: 50px;
+  padding: 15px 30px 10px 15px;
+  font-size: 24px;
+  color: #FFF; }
+  #urlInput:focus {
+    outline: none; }
+  #urlInput::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #FFF;
+    font-size: 24px; }
+
+#previewUrl {
+  border-radius: 50%;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: #329cff;
+  padding: 11px;
+  border: 0; }
+  #previewUrl img {
+    cursor: pointer;
+    height: 30px;
+    width: 30px; }
+
+#previewContent {
+  margin: 14px;
+  position: relative;
+  z-index: 0;
+  margin-top: 156px; }
+
+#toolbar {
+  top: 76px;
+  width: 100%;
+  position: fixed;
+  padding: 8px 0;
+  background: #333;
+  border-bottom: 1px solid #FFF; }
+  #toolbar #questions {
+    position: absolute;
+    bottom: 9px;
+    right: 12px;
+    cursor: pointer; }
+    #toolbar #questions img {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #777;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle; }
+  #toolbar #subscriptionLogout {
+    position: absolute;
+    bottom: 9px;
+    right: 72px;
+    cursor: pointer; }
+    #toolbar #subscriptionLogout img {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #777;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle; }
+
+#saveDirectory {
+  background: none;
+  color: #FFF;
+  border: 0;
+  font-size: 18px;
+  width: 200px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  direction: rtl;
+  vertical-align: middle; }
+  #saveDirectory::-webkit-input-placeholder {
+    color: #999; }
+
+#assetName {
+  width: 160px;
+  margin: 0 14px;
+  border: 0;
+  padding: 6px;
+  font-size: 18px;
+  vertical-align: middle;
+  border: none;
+  border-bottom: 1px solid #FFF;
+  background: none;
+  color: #FFF; }
+  #assetName::-webkit-input-placeholder {
+    color: #FFF;
+    font-size: 18px; }
+  #assetName:focus {
+    outline: none; }
+
+#chooseDirectory {
+  cursor: pointer;
+  background: none;
+  margin: 0 4px 0 8px;
+  border: 0; }
+  #chooseDirectory:focus {
+    outline: none; }
+  #chooseDirectory img {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle; }
+
+#downloadUrl {
+  display: none;
+  cursor: pointer;
+  background: none;
+  margin: 0 14px;
+  border: 0; }
+  #downloadUrl:focus {
+    outline: none; }
+  #downloadUrl img {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle; }
+
+#capturePhoto {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: 0; }
+  #capturePhoto:focus {
+    outline: none; }
+  #capturePhoto img {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle; }
+
+#savePreviews {
+  display: none;
+  border-bottom: 1px solid #FFF;
+  position: fixed;
+  top: 146px;
+  width: 100%;
+  min-height: 234px;
+  background: #333;
+  color: #FFF;
+  text-align: left;
+  padding: 0; }
+  #savePreviews ul {
+    padding: 14px; }
+  #savePreviews ul li {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    list-style: none;
+    margin: 0 10px; }
+    #savePreviews ul li:first-child {
+      margin: 0 10px 0 0; }
+    #savePreviews ul li img {
+      width: 200px; }
+      #savePreviews ul li img.snapchatOverlay {
+        position: absolute;
+        top: 0;
+        left: 0; }
+    #savePreviews ul li .previewContainer {
+      position: relative; }
+    #savePreviews ul li watermark {
+      font-size: 8px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2px;
+      position: absolute; }
+      #savePreviews ul li watermark.topLeft {
+        top: 4px;
+        left: 4px; }
+      #savePreviews ul li watermark.topRight {
+        top: 4px;
+        right: 4px; }
+      #savePreviews ul li watermark.bottomLeft {
+        bottom: 8px;
+        left: 4px; }
+      #savePreviews ul li watermark.bottomRight {
+        bottom: 8px;
+        right: 4px; }
+
+#metadata {
+  width: 100%;
+  min-height: 240px;
+  position: relative; }
+  #metadata img {
+    position: absolute;
+    max-width: 200px;
+    max-height: 200px;
+    top: 18px;
+    right: 14px; }
+  #metadata h1 {
+    padding: 14px;
+    margin: 0;
+    text-transform: uppercase;
+    max-width: 50%; }
+  #metadata p {
+    margin: 0;
+    padding: 0 14px;
+    max-width: 50%; }
+  #metadata .service {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0; }
+  #metadata.facebook {
+    background-color: #3B5998;
+    color: #FFF; }
+  #metadata.instagram {
+    background-color: #A74A93;
+    color: #FFF; }
+  #metadata.snapchat {
+    background-color: #FFFB00;
+    color: #333; }
+  #metadata.twitch {
+    background-color: #6441a5;
+    color: #FFF; }
+  #metadata.twitter {
+    background-color: #1DA1F2;
+    color: #FFF; }
+  #metadata.vimeo {
+    background-color: #1ab7ea;
+    color: #FFF; }
+  #metadata.youtube {
+    background-color: #cd201f;
+    color: #FFF; }
+
+.loader {
+  display: none;
+  height: 4px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #333; }
+
+.loader:before {
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 4px;
+  background-color: #329cff;
+  animation: loading 1.25s linear infinite; }
+
+@keyframes loading {
+  from {
+    left: -200px;
+    width: 30%; }
+  50% {
+    width: 30%; }
+  70% {
+    width: 70%; }
+  80% {
+    left: 50%; }
+  95% {
+    left: 120%; }
+  to {
+    left: 100%; } }
+
+#embedPreview {
+  text-align: center;
+  padding: 14px; }
+
+#canvas {
+  display: none; }
+
+#mySubscription {
+  font-size: 24px;
+  display: none;
+  width: 500px;
+  margin: 68px auto 0 auto;
+  text-align: left;
+  background: #FFF;
+  display: none;
+  padding: 24px;
+  color: #333;
+  border-radius: 12px; }
+  #mySubscription button {
+    cursor: pointer;
+    padding: 8px 54px;
+    font-size: 24px;
+    border: 0;
+    font-weight: 100;
+    border-radius: 12px;
+    margin: 12px 0; }
+    #mySubscription button#loadApp {
+      background-color: green;
+      border: 1px solid #777;
+      color: #FFF; }
+    #mySubscription button#cancelSubscription {
+      border: 1px solid #777;
+      background-color: #ecfa8b;
+      color: #333;
+      padding: 8px 32px;
+      font-size: 16px; }
+
+#subscribe {
+  color: #FFF;
+  margin: 0 0 32px 0; }
+  #subscribe h1 {
+    margin-bottom: 24px; }
+  #subscribe #alreadySubscribed {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #999; }
+    #subscribe #alreadySubscribed:visited {
+      color: #999; }
+  #subscribe #userData input {
+    display: block;
+    margin: 12px 0;
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    padding: 8px; }
+  #subscribe #userData .errorMessage {
+    text-align: center;
+    font-size: 14px;
+    color: red; }
+  #subscribe #prices {
+    margin: 24px 0; }
+    #subscribe #prices .priceGrid {
+      border-radius: 8px;
+      background: #FFF;
+      margin: 0 24px;
+      vertical-align: top;
+      display: inline-block;
+      width: 304px; }
+      #subscribe #prices .priceGrid:nth-child(1) .price {
+        background: #62e4cc; }
+      #subscribe #prices .priceGrid:nth-child(2) .price {
+        background: #500dc0; }
+      #subscribe #prices .priceGrid:nth-child(3) .price {
+        background: #329cff; }
+      #subscribe #prices .priceGrid .plan-name {
+        border-radius: 8px 8px 0 0;
+        margin: 0;
+        padding: 12px 0;
+        background: #d7d7d7;
+        color: #333;
+        text-align: center; }
+      #subscribe #prices .priceGrid .price {
+        margin: 0;
+        color: #FFF;
+        font-size: 48px;
+        text-align: center;
+        width: 100%;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 24px 0; }
+      #subscribe #prices .priceGrid button {
+        cursor: pointer;
+        background: #7385ff;
+        width: 100%;
+        color: #f7f7f7;
+        padding: 12px 0;
+        border-width: 1px 0;
+        border-style: solid;
+        border-color: #777;
+        text-align: center;
+        font-size: 20px; }
+      #subscribe #prices .priceGrid .details {
+        text-align: center;
+        color: #696969;
+        padding: 12px 0;
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 1px solid #828282; }
+      #subscribe #prices .priceGrid ul {
+        margin: 0;
+        padding: 12px 12px 8px 12px; }
+        #subscribe #prices .priceGrid ul li {
+          width: 300px;
+          list-style: none;
+          color: #333; }
+          #subscribe #prices .priceGrid ul li img.optionsIcon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            padding: 8px 8px 8px 0px; }
+          #subscribe #prices .priceGrid ul li p {
+            margin-left: 12px;
+            font-size: 13px;
+            margin-top: 14px;
+            display: inline-block;
+            vertical-align: top; }
+  #subscribe #supportDetails {
+    margin-top: 24px; }
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; }

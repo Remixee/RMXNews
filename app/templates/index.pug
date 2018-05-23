@@ -1,0 +1,41 @@
+doctype html  
+html(lang='en')  
+    head
+        title RMXNews
+        link(rel="stylesheet", type="text/css", href="index.css")
+    body
+        #mainContent
+            #statusBar 
+                #statusText
+
+            form#urlForm                
+                input#urlInput(type="text", placeholder="Paste Url here ...", alt="")
+                button#previewUrl(type="submit", alt="Preview Url")
+                    img(src="assets/img/target.png")
+
+            #loadingBar.loader
+
+            #toolbar
+                button#chooseDirectory(alt="Choose save directory")
+                    img(src="assets/img/folder.png")
+                #saveDirectory Choose save directory
+                input#assetName(type="text", placeholder="Name")
+
+                button#downloadUrl(alt="Download Video")
+                    img(src="assets/img/download-video-file.png")
+                
+                button#capturePhoto(alt="Save Photo")
+                    img(src="assets/img/photo-camera-vintage.png")
+
+                //- a#questions(href='')
+                    img(src='assets/img/questions-circular-button.png')
+
+            #savePreviews  
+                
+        #previewContent
+            #metadataPreview
+            #embedPreview
+            canvas#canvas
+            canvas#poopCanvas
+        
+        script(src="index.js", type="text/javascript")
